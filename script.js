@@ -80,12 +80,12 @@ const JOURNEY = [
    tile below to show a real picture instead of the colored placeholder. */
 const GALLERY = [
   {label:"Team Meeting", grad:"linear-gradient(145deg,#0A0E27,#7C4CE8)", photo:"images/team.jpeg"},
-  {label:"Workshop", grad:"linear-gradient(145deg,#7C4CE8,#E8B94D)", photo:"images/group.jpeg"},
-  {label:"Fun Moment", grad:"linear-gradient(145deg,#E8B94D,#0A0E27)", photo:"images/fun_activity.jpeg"},
-  {label:"Activity", grad:"linear-gradient(145deg,#3B2A8C,#A87CF2)", photo:"images/ice_break.jpeg"},
+  {label:"Our Team", grad:"linear-gradient(145deg,#7C4CE8,#E8B94D)", photo:"images/group.jpeg"},
+  {label:"Activity", grad:"linear-gradient(145deg,#E8B94D,#0A0E27)", photo:"images/fun_activity.jpeg"},
+  {label:"Fun Moment", grad:"linear-gradient(145deg,#3B2A8C,#A87CF2)", photo:"images/ice_break.jpeg"},
   {label:"Group Discussion", grad:"linear-gradient(145deg,#0A0E27,#4C6FE8)", photo:"images/gd.jpeg"},
   {label:"Presentation Day", grad:"linear-gradient(145deg,#B9772F,#E8B94D)", photo:"images/presentation.jpeg"},
-  {label:"Ice-breaker", grad:"linear-gradient(145deg,#7C4CE8,#0A0E27)", photo:"images/team (2).jpeg"},
+  {label:"Winners", grad:"linear-gradient(145deg,#7C4CE8,#0A0E27)", photo:"images/team (2).jpeg"},
   {label:"Celebration", grad:"linear-gradient(145deg,#E8B94D,#7C4CE8)", photo:"images/celebration.jpeg"},
 ];
 
