@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCTAGON — Together To Get There.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <svg viewBox="0 0 100 100"><polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30"/></svg>
+  <p>Assembling Octagon…</p>
+</div>
+<canvas id="confetti-canvas"></canvas>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo">
+    <!--
+      LOGO: this <span id="logoSlot"> holds the built-in SVG flame/octagon mark.
+      To use your own logo image instead:
+        1. Put your logo file in an "images" folder (e.g. images/logo.png)
+        2. Open script.js and set:  const LOGO_IMAGE = "images/logo.png";
+      script.js will then automatically swap this SVG for your <img> logo.
+      You do NOT need to edit anything in this HTML file for the logo.
+    -->
+    <span id="logoSlot">
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="logoFlame" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#E8432D"/>
+            <stop offset="55%" stop-color="#F2942B"/>
+            <stop offset="100%" stop-color="#FBD65A"/>
+          </linearGradient>
+        </defs>
+        <polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30" fill="none" stroke="currentColor" stroke-width="5"/>
+        <polygon points="43,6 57,6 50,28" fill="url(#logoFlame)"/>
+        <polygon points="76.16,13.94 86.06,23.84 65.56,34.44" fill="url(#logoFlame)"/>
+        <polygon points="94,43 94,57 72,50" fill="url(#logoFlame)"/>
+        <polygon points="86.06,76.16 76.16,86.06 65.56,65.56" fill="url(#logoFlame)"/>
+        <polygon points="57,94 43,94 50,72" fill="url(#logoFlame)"/>
+        <polygon points="23.84,86.06 13.94,76.16 34.44,65.56" fill="url(#logoFlame)"/>
+        <polygon points="6,57 6,43 28,50" fill="url(#logoFlame)"/>
+        <polygon points="13.94,23.84 23.84,13.94 34.44,34.44" fill="url(#logoFlame)"/>
+        <text x="50" y="58" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="24" fill="currentColor">O</text>
+      </svg>
+    </span>
+    OCTAGON<span>.</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#values">Values</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-tools">
+    <button class="icon-btn" id="musicToggle" title="Background music">🔈</button>
+    <button class="icon-btn" id="themeToggle" title="Toggle dark / light">🌙</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <svg id="hero-svg" viewBox="0 0 400 400"></svg>
+  <div class="hero-inner">
+    <div class="eyebrow hero-eyebrow">Team Octagon · Est. 2026</div>
+    <h1 class="hero-title" style="color:white;">OCTAGON</h1>
+    <p class="hero-slogan">"Together To Get There."</p>
+    <p class="hero-welcome">We are Team Octagon — eight individuals with different strengths united by one goal: learning, growing, and succeeding together.</p>
+    <p class="scroll-cue">Scroll to meet the team ↓</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About Us</div>
+      <p class="about-quote">"Team Octagon represents unity, creativity, leadership, collaboration, and continuous growth."</p>
+      <p class="about-copy">Every member contributes unique skills, making us stronger together. Eight sides, one shape — eight people, one purpose. We show up for each other in every session, every discussion, and every challenge, because that's what Octagon means to us.</p>
+    </div>
+    <!--
+      This octagon frame currently shows the number "8". If you'd like to put a
+      team photo inside it instead, replace the <span>8</span> line below with:
+        <img src="images/team-photo.jpg" alt="Team Octagon">
+      (put your photo in an "images" folder next to this file first)
+    -->
+    <div class="octagon-frame reveal"><span>8</span></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-head reveal">
+    <div class="eyebrow">Meet Our Team</div>
+    <h2>Eight sides. One shape.</h2>
+    <p>Hover a card to read what drives each member.</p>
+  </div>
+  <!--
+    MEMBER PHOTOS: these cards are generated automatically from the MEMBERS
+    array in script.js. To give a member a real photo instead of the colored
+    initials avatar, open script.js and add a "photo" field to that person,
+    e.g.  photo: "images/arundhathy.jpg"
+    You don't need to edit anything here — script.js builds this grid.
+  -->
+  <div class="team-grid" id="teamGrid"></div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="section-head reveal">
+    <div class="eyebrow">Our Values</div>
+    <h2>What holds us together</h2>
+  </div>
+  <div class="values-grid" id="valuesGrid"></div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-head reveal">
+    <div class="eyebrow">Our Journey</div>
+    <h2>How we got here</h2>
+    <p>Tap a milestone to expand it.</p>
+  </div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-head reveal">
+    <div class="eyebrow">Gallery</div>
+    <h2>Moments worth keeping</h2>
+    <p>Swap these placeholders for your real photos — see script.js.</p>
+  </div>
+  <!--
+    GALLERY PHOTOS: these tiles are generated from the GALLERY array in
+    script.js. To show a real photo on a tile, open script.js and add a
+    "photo" field to that tile, e.g.  photo: "images/meeting1.jpg"
+  -->
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-head reveal">
+    <div class="eyebrow">Achievements</div>
+    <h2>Proof we showed up</h2>
+  </div>
+  <div class="ach-grid" id="achGrid"></div>
+</section>
+
+<!-- MOTTO -->
+<section id="motto">
+  <p class="reveal">"Alone we are talented. Together we are Octagon."</p>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="section-head reveal">
+    <div class="eyebrow">Team Statistics</div>
+    <h2>Octagon by the numbers</h2>
+  </div>
+  <div class="stats-grid" id="statsGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 style="margin-top:14px;">Let's connect</h2>
+      <ul class="contact-list" style="margin-top:24px;">
+        <!-- <li>✉️ <a href="mailto:teamoctagon@example.com">teamoctagon@example.com</a></li> -->
+        <!-- <li>💼 <a href="#" id="linkedinLink">linkedin.com/company/team-octagon</a></li> -->
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="qr" id="qr"></div>
+      <p class="qr-label">Scan to connect · Instagram</p>
+    </div>
+    
+  </div>
+</section>
+
+<footer>
+  Team <strong>OCTAGON</strong> — "Together To Get There." · © 2026 · Built with pride by eight people who show up for each other.
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
